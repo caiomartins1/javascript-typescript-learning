@@ -4,3 +4,6 @@ Material icon theme
 
 Code runner
 StandartJS
+open in browser
+prettier
+live server

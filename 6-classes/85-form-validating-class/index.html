@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <section class="container">
+      <h1>Sign Up Form</h1>
+
+      <ul>
+        <li>No input can be empty</li>
+        <li>User can only have letters and numbers</li>
+        <li>User must have at least 3 characters and max 12</li>
+        <li>Password should have at least 6 characters and max 12</li>
+      </ul>
+
+      <form action="/" method="POST" class="form">
+        <label for="name">Name</label>
+        <input type="text" id="name" />
+
+        <label for="second-name">Second Name</label>
+        <input type="text" id="second-name" />
+
+        <label for="cpf">CPF</label>
+        <input type="text" id="cpf" />
+
+        <label for="user">User</label>
+        <input type="text" id="user" />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" class="password" />
+
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" class="password" />
+        <button>Submit</button>
+      </form>
+    </section>
+    <script src="./assets/js/validateCPF.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
