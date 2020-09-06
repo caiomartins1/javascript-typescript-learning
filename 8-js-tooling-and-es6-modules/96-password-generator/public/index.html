@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout</title>
+  </head>
+  <body>
+    <section class="container">
+      <h1>Password Generator</h1>
+      <div class="result">Select Options</div>
+      <label for="length">Password Length</label>
+      <input
+        value="20"
+        type="number"
+        name="length"
+        id="length"
+        min="1"
+        max="50"
+      />
+      <br />
+      <label for="numbers">Add numbers</label>
+      <input type="checkbox" name="numbers" id="numbers" /> <br />
+      <label for="upperCases">Add UpperCases</label>
+      <input type="checkbox" name="upperCases" id="upperCases" /> <br />
+      <label for="lowerCases">Add LowerCases</label>
+      <input type="checkbox" name="lowerCases" id="lowerCases" /> <br />
+      <label for="symbols">Add Symbols</label>
+      <input type="checkbox" name="symbols" id="symbols" /> <br />
+      <button type="submit" class="btn">Generate!</button>
+    </section>
+    <script src="./assets/js/bundle.js"></script>
+  </body>
+</html>
