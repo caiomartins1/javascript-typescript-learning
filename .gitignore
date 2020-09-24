@@ -1,3 +1,4 @@
 .DS_Store
 mongodb-info.txt
 node_modules
+.env
