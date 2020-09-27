@@ -15,7 +15,7 @@ mongoose
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const flash = require('connect-flash');
-const routes = require('./routes');
+const route = require('./routes');
 const path = require('path');
 const helmet = require('helmet');
 const csrf = require('csurf');
@@ -52,7 +52,7 @@ app.use(csrf());
 app.use(globalMiddleware);
 app.use(checkCsrfError);
 app.use(csrfToken);
-app.use(routes);
+app.use(route);
 
 app.on('ready', () => {
   app.listen(3000, () => {
