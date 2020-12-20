@@ -17,12 +17,6 @@ function Contact(body) {
   this.contact = null;
 }
 
-Contact.searchById = async function (id) {
-  if (typeof id !== 'string') return;
-  const user = await ContactModel.findById(id);
-  return user;
-};
-
 Contact.prototype.register = async function () {
   this.validate();
 
@@ -72,6 +66,25 @@ Contact.prototype.edit = async function (id) {
   this.contact = await ContactModel.findByIdAndUpdate(id, this.body, {
     new: true,
   });
+};
+
+Contact.searchById = async function (id) {
+  if (typeof id !== 'string') return;
+  const contact = await ContactModel.findById(id);
+  return contact;
+};
+
+Contact.searchContacts = async function () {
+  const contacts = await ContactModel.find().sort({ createdAt: -1 });
+  return contacts;
+};
+
+Contact.delete = async function (id) {
+  if (typeof id !== 'string') return;
+
+  const contact = await ContactModel.findOneAndDelete({ _id: id });
+
+  return contact;
 };
 
 module.exports = Contact;

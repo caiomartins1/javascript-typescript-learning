@@ -9,16 +9,25 @@
 
       <p class="text-center lead">All your contacts listed in a simple and beautiful way.</p>
       <%- include('includes/messages')  %> 
-      <div class="responsive-table">
-        <table class="table my-3">
-          <tr>
-            <td>Caio</td>
-            <td>Martins</td>
-            <td>+351 123456789</td>
-            <td>caio@gmail.co</td>
-          </tr>
-        </table>
-      </div>
+
+      <% if (contacts.length > 0) { %>
+        <div class="responsive-table">
+          <table class="table my-3">
+            <% contacts.forEach(contact => { %>
+              <tr>
+                <td><%= contact.firstName %></td>
+                <td><%= contact.lastName %></td>
+                <td><%= contact.phoneNumber %></td>
+                <td><%= contact.email %></td>
+                <td><a href="/contact/<%= contact._id %>">Edit</a></td>
+                <td><a class="text-danger" href="/contact/delete/<%= contact._id %>">Delete</a></td>
+              </tr>      
+            <% }); %>
+          </table>
+        </div>
+      <% } else { %>
+        <p class="text-center lead">There is no contacts in your book!.</p>
+      <% } %> 
     </div>
     <div class="col-lg-2"></div>
   </div>
