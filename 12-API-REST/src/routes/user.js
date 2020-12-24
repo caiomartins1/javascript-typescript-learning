@@ -4,6 +4,10 @@ import userController from '../controllers/UserController';
 const router = new Router();
 
 router.post('/', userController.store);
+router.put('/:id', userController.update);
+router.get('/', userController.index);
+router.get('/:id', userController.show);
+router.delete('/:id', userController.delete);
 
 export default router;
 
