@@ -23,3 +23,5 @@ const sentUser = {
 };
 
 const loggedIn = verifyUser(bdUser, sentUser);
+
+export { bdUser };
